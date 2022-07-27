@@ -48,29 +48,5 @@ let getComputerChoice = () => {
     }
   }
 
-  
+//Event listeners
 
-//const computerSelection = getComputerChoice();
-/*
-console.log(computerSelection)
-console.log(playRound(playerSelection, computerSelection));
-console.log(playerScore)
-console.log(computerScore)*/
-
-let play = () => {
-    for (let i = 0; i < 5; i++){
-        const playerSelection = prompt('rock, paper, scissors?')
-        console.log(playRound(playerSelection, getComputerChoice()))
-    }
-    console.log('Your score is ' + playerScore)
-    console.log('The computers score is ' + computerScore)
-    if (playerScore > computerScore){
-        return 'Win';
-    } else if (computerScore > playerScore) {
-        return 'Lose'
-    } else {
-        return 'Tie'
-    }
-}
-
-console.log(play())

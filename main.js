@@ -50,9 +50,8 @@ let getComputerChoice = () => {
 
 //Event listeners
 
+const buttons = document.querySelectorAll('button')
 
-  // buttons is a node list. It looks and acts much like an array.
-const buttons = document.querySelectorAll('button');
 console.log(buttons)
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {

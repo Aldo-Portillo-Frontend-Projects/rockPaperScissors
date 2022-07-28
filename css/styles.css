@@ -1,16 +1,18 @@
 *{
     background-color: #121212;
     color: #FFFFFF;
-   /* color: #3700B3;*/
 }
 
 body{
     display: flex;
     flex-direction: column;
-    
 }
 
-/* From shoot to wins */
+h1{
+    display: flex;
+    align-self: center;
+}
+
 .prompt{
     display: flex;
     flex-direction: column;
@@ -18,9 +20,6 @@ body{
 
 }
 
-/*The Game*/
-
-    /*STYLE THE BOX*/
 .image{
     border: #FFFFFF solid 1px;
     display: flex;
@@ -35,7 +34,7 @@ body{
 .game{
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 50px;
 }
 
 .screen{
@@ -44,7 +43,6 @@ body{
     align-items: center;
 }
 
-/*The Choices*/
 .choices{
     display: flex;
     flex-direction: column;

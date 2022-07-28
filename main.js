@@ -7,7 +7,6 @@ let getComputerChoice = () => {
     return arr[Math.floor(Math.random() * 3)]
   }
 
-  //console.log(getComputerChoice());
   const result = document.querySelector('.result');
   const explanation = document.querySelector('.exp') 
 
@@ -126,6 +125,3 @@ let gameRestart = () => {
     computerImg.textContent = '?';
 }
 
-
-
-/* for reset set scores to 0 */

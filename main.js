@@ -64,6 +64,8 @@ const playerPoints = document.querySelector('.player-score');
 const computerPoints = document.querySelector('.computer-score')
 const playerImg = document.querySelector('.player-image');
 const computerImg = document.querySelector('.computer-image');
+const fullPage = document.querySelector('body');
+const sadFace = document.querySelector('.sad-face');
 
 const textToImg = (text) => {
     if (text === 'rock'){
@@ -74,6 +76,7 @@ const textToImg = (text) => {
         return '✌';
     }
 }
+
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
 
@@ -88,9 +91,24 @@ buttons.forEach((button) => {
     console.log(computerScore)
 
     if (playerScore === 5) {
-        window.alert('You win');
+        
+        confetti({
+            particleCount: 150,
+            spread: 180
+        });
+        setTimeout(() => {
+            gameRestart();
+            confetti.reset();
+          }, 1000);
+
     } else if (computerScore === 5) {
-        window.alert('You Lose')
+        fullPage.style.visibility = 'hidden';
+        sadFace.style.visibility = 'visible';
+        setTimeout(() => {
+            fullPage.style.visibility = 'visible';
+            sadFace.style.visibility = 'hidden';
+            gameRestart();
+        }, 1000)
     }
 
   });
@@ -98,7 +116,14 @@ buttons.forEach((button) => {
 });
 
 let gameRestart = () => {
-
+    result.textContent = 'Shoot!';
+            explanation.textContent = 'First to 5 wins!'
+    playerScore = 0;
+    computerScore = 0;
+    playerPoints.textContent = `Player Score: ${playerScore}`;
+    computerPoints.textContent = `Computer Score: ${computerScore}`;
+    playerImg.textContent = '?';
+    computerImg.textContent = '?';
 }
 
 

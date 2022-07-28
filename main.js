@@ -8,49 +8,60 @@ let getComputerChoice = () => {
   }
 
   //console.log(getComputerChoice());
+  const result = document.querySelector('.result');
+  const explanation = document.querySelector('.exp') 
 
   let playRound = (playerSelection, computerSelection ) => {
 
     if (playerSelection === computerSelection){
-        return 'There is a Tie!';
+        result.textContent = 'Nobody wins this round';
+        explanation.textContent = 'There is a Tie';
     } else if (playerSelection === 'rock') {
         if (computerSelection === 'paper') {
             computerScore++;
-            return 'You Lose! Paper beats Rock';
+            result.textContent = 'You Lose :(';
+            explanation.textContent = 'Paper beats Rock';
             
         } else {
             playerScore++;
-            return 'You Win! Rock beats scissors';
+            result.textContent = 'You Win!';
+            explanation.textContent = 'Rock beats scissors';
              
         }
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'scissors') {
             computerScore++;
-            return 'You Lose! Scissors beats paper';
+            result.textContent = 'You Lose :(';
+            explanation.textContent = 'Scissors beats paper';
             
         } else {
             playerScore++;
-            return 'You Win! Paper beats rock';
+            result.textContent = 'You Win!';
+            explanation.textContent = 'Paper beats rock';
             
         }
     } else if (playerSelection === 'scissors') {
         if (computerSelection === 'rock') {
             computerScore++;
-            return 'You Lose! Rock beats scissors';
+            result.textContent = 'You Lose :(';
+            explanation.textContent = 'Rock beats scissors';
             
         } else {
             playerScore++;
-            return 'You Win! Scissors beats paper'
+            result.textContent = 'You Win!';
+            explanation.textContent = 'Scissors beats paper'
             
         }
     } else {
-        return 'invalid input';
+        explanation.textContent = 'invalid input';
     }
   }
 
 //Event listeners
 
 const buttons = document.querySelectorAll('button')
+const playerPoints = document.querySelector('.player-score');
+const computerPoints = document.querySelector('.computer-score')
 
 console.log(buttons)
 // we use the .forEach method to iterate through each button
@@ -58,7 +69,25 @@ buttons.forEach((button) => {
 
   // and for each one we add a 'click' listener
   button.addEventListener('click', () => {
-    console.log(playRound(button.id, getComputerChoice()));
+    playRound(button.id, getComputerChoice());
+    playerPoints.textContent = `Player Score: ${playerScore}`;
+    computerPoints.textContent = `Computer Score: ${computerScore}`;
+    console.log(computerScore)
+
+    if (playerScore === 5) {
+        window.alert('You win');
+    } else if (computerScore === 5) {
+        window.alert('You Lose')
+    }
+
   });
+
 });
 
+let gameRestart = () => {
+
+}
+
+
+
+/* for reset set scores to 0 */

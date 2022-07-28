@@ -7,7 +7,7 @@
 body{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
 }
 
 /* From shoot to wins */
@@ -20,5 +20,37 @@ body{
 
 /*The Game*/
 
+    /*STYLE THE BOX*/
+.image{
+    border: #FFFFFF solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    font-size: xx-large;
+    border-radius: 20px;
+}
+
+.game{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /*The Choices*/
+.choices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-container{
+    display: flex;
+    
+}

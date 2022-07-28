@@ -62,14 +62,27 @@ let getComputerChoice = () => {
 const buttons = document.querySelectorAll('button')
 const playerPoints = document.querySelector('.player-score');
 const computerPoints = document.querySelector('.computer-score')
+const playerImg = document.querySelector('.player-image');
+const computerImg = document.querySelector('.computer-image');
 
-console.log(buttons)
+const textToImg = (text) => {
+    if (text === 'rock'){
+        return '✊';
+    } else if (text === 'paper'){
+        return '🤚';
+    } else if (text === 'scissors'){
+        return '✌';
+    }
+}
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
 
   // and for each one we add a 'click' listener
   button.addEventListener('click', () => {
-    playRound(button.id, getComputerChoice());
+    const computerChoice = getComputerChoice();
+    playRound(button.id, computerChoice);
+    playerImg.textContent = textToImg(button.id);
+    computerImg.textContent = textToImg(computerChoice);
     playerPoints.textContent = `Player Score: ${playerScore}`;
     computerPoints.textContent = `Computer Score: ${computerScore}`;
     console.log(computerScore)

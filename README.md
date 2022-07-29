@@ -4,5 +4,5 @@
 
 This project helped me to better understand the DOM and the event listeners and manipulation that come along with it.
 
-[Active page](https://aldoportillo.github.io/odin-rockpaperscissors/)
+[Active page](https://aldoportillo.github.io/rockPaperScissors/)
 [Source for confetti effect](https://www.npmjs.com/package/canvas-confetti)
